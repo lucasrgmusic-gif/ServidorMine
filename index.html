@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Meu Servidor Minecraft</title>
+    <style>
+        body { font-family: sans-serif; margin: 0; background: #1e1e1e; color: white; }
+        nav { background: #333; padding: 1rem; text-align: center; }
+        nav a { color: #58ff58; margin: 0 15px; text-decoration: none; font-weight: bold; }
+        section { padding: 50px; display: none; text-align: center; }
+        section.active { display: block; }
+        .ip { background: #444; padding: 10px; border-radius: 5px; font-family: monospace; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="#" onclick="show('inicio')">Início</a>
+    <a href="#" onclick="show('cidades')">Cidades</a>
+    <a href="#" onclick="show('servidor')">Servidor</a>
+</nav>
+
+<section id="inicio" class="active">
+    <h1>Bem-vindo ao Servidor!</h1>
+    <p>Explore nosso mundo de 1000x1000 blocos.</p>
+    <p>IP: <span class="ip">seu-duckdns.org</span></p>
+</section>
+
+<section id="cidades">
+    <h1>Nossas Cidades</h1>
+    <p>Atualmente divididas em lotes de 12x12 chunks.</p>
+    <ul>
+        <li>Cidade Alfa - Lotes disponíveis!</li>
+    </ul>
+</section>
+
+<section id="servidor">
+    <h1>Informações Técnicas</h1>
+    <p>Versão: Paper Experimental 26.1.2</p>
+    <p>Suporte: Java & Bedrock (Geyser)</p>
+</section>
+
+<script>
+    function show(id) {
+        document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
+        document.getElementById(id).classList.add('active');
+    }
+</script>
+</body>
+</html>
