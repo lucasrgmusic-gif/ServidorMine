@@ -138,13 +138,13 @@
 
 <header>
     <h1>Crônicas Minecraft</h1>
-    <p>Onde sua jornada IPv6 começa!</p>
+    <p>Onde sua jornada começa!</p>
 </header>
 
 <nav>
     <button onclick="openTab('home')" id="defaultTab">Home</button>
-    <button onclick="openTab('comandos')">Comandos</button>
     <button onclick="openTab('conexao')">Conexão</button>
+    <button onclick="openTab('comandos')">Comandos</button>
     <button onclick="openTab('servidor')">Servidor</button>
 </nav>
 
@@ -165,23 +165,7 @@
         <a href="https://discord.gg/yxEqaaKDZ" target="_blank" class="btn-discord">Entrar no Discord da Comunidade</a>
     </div>
 
-    <!-- ABA COMANDOS -->
-    <div id="comandos" class="tab-content">
-        <h2>Guia de Comandos</h2>
-        <p>Se você nascer em terra alheia e não puder quebrar blocos, use <span class="command">/lands wild</span>, assim você será teleportado ao mapa livre, aonde não foi reivindicado. Também pode fazer uma jornada a pé, até sair do local atual.</p>
-        
-        <hr>
-        <p><strong>Reivindicar terra (Raio de 5 chunks):</strong><br><span class="command">/claim radius 5</span></p>
-        <p><strong>Renomear sua terra:</strong><br><span class="command">/lands rename [Nome]</span></p>
-        <p><strong>Configurar o local de Spawn da sua terra:</strong><br><span class="command">/lands setspawn</span></p>
-        <p><strong>Adicionar amigo a sua terra (Trust):</strong><br><span class="command">/lands trust [Nome]</span></p>
-        <p><strong>Remover amigo de sua terra (Untrust):</strong><br><span class="command">/lands untrust [Nome]</span></p>
-        <p><strong>Teleportar para uma terra já reivindicada:</strong><br><span class="command">/lands spawn [Nome]</span></p>
-        <p><strong>Sair da propriedade de alguém:</strong><br><span class="command">/lands leave [Nome]</span></p>
-        <p><strong>Deletar sua terra:</strong><br><span class="command">/lands delete [Nome]</span></p>
-    </div>
-
-    <!-- ABA CONEXÃO -->
+<!-- ABA CONEXÃO -->
     <div id="conexao" class="tab-content">
         <h2>Como se Conectar</h2>
         <p>A conexão é feita via <span class="highlight">IPv6</span>. Usamos o DuckDNS para manter o hostname atualizado.</p>
@@ -206,6 +190,22 @@ for /f "tokens=2 delims=[]" %%a in ('ping -6 -n 1 %dominio% ^| findstr "["') do 
 )
 echo Nao foi possivel capturar o IPv6. Verifique a conexao.
 pause</pre>
+    </div>
+    
+    <!-- ABA COMANDOS -->
+    <div id="comandos" class="tab-content">
+        <h2>Guia de Comandos</h2>
+        <p>Se você nascer em terra alheia e não puder quebrar blocos, use <span class="command">/lands wild</span>, assim você será teleportado ao mapa livre, aonde não foi reivindicado. Também pode fazer uma jornada a pé, até sair do local atual.</p>
+        
+        <hr>
+        <p><strong>Reivindicar terra (Raio de 5 chunks):</strong><br><span class="command">/claim radius 5</span></p>
+        <p><strong>Renomear sua terra:</strong><br><span class="command">/lands rename [Nome]</span></p>
+        <p><strong>Configurar o local de Spawn da sua terra:</strong><br><span class="command">/lands setspawn</span></p>
+        <p><strong>Adicionar amigo a sua terra (Trust):</strong><br><span class="command">/lands trust [Nome]</span></p>
+        <p><strong>Remover amigo de sua terra (Untrust):</strong><br><span class="command">/lands untrust [Nome]</span></p>
+        <p><strong>Teleportar para uma terra já reivindicada:</strong><br><span class="command">/lands spawn [Nome]</span></p>
+        <p><strong>Sair da propriedade de alguém:</strong><br><span class="command">/lands leave [Nome]</span></p>
+        <p><strong>Deletar sua terra:</strong><br><span class="command">/lands delete [Nome]</span></p>
     </div>
 
     <!-- ABA SERVIDOR -->
@@ -267,34 +267,28 @@ pause</pre>
     document.getElementById("defaultTab").click();
 
     async function getMCStatus() {
-    const ip = 'cronicasminecraft.duckdns.org'; // Seu hostname
+    const ip = 'cronicasminecraft.duckdns.org'; 
     const statusText = document.getElementById('status-indicator');
     const playerCount = document.getElementById('player-count');
-    const versionInfo = document.getElementById('version-info');
 
     try {
-        const response = await fetch(`https://mcstatus.io{ip}`);
+        // Mudamos para a API do MCSrvStat
+        const response = await fetch(`https://mcsrvstat.us{ip}`);
         const data = await response.json();
 
         if (data.online) {
             statusText.innerHTML = '<span style="color: #55ff55;">● ONLINE</span>';
             playerCount.innerHTML = `Jogadores: ${data.players.online} / ${data.players.max}`;
-            versionInfo.innerHTML = `Versão: ${data.version.name_clean}`;
         } else {
             statusText.innerHTML = '<span style="color: #ff5555;">● OFFLINE</span>';
-            playerCount.innerHTML = 'Servidor desligado';
-            versionInfo.innerHTML = 'Tente novamente mais tarde';
+            playerCount.innerHTML = 'Servidor desligado ou inacessível via IPv4';
         }
     } catch (error) {
-        statusText.innerHTML = '<span style="color: #ffaa00;">● ERRO NA API</span>';
-        playerCount.innerHTML = 'Não foi possível obter os dados';
+        statusText.innerHTML = '<span style="color: #ffaa00;">● ERRO DE CONEXÃO</span>';
+        playerCount.innerHTML = 'Verifique se seu navegador suporta IPv6';
     }
 }
 
-// Chama a função ao carregar a página
-getMCStatus();
-// Atualiza a cada 1 minuto (opcional)
-setInterval(getMCStatus, 60000);
 </script>
 
 </body>
