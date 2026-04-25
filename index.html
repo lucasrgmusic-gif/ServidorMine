@@ -153,30 +153,30 @@
     <!-- ABA HOME -->
     <div id="home" class="tab-content">
         <h2>Bem-vindo ao nosso servidor provisório</h2>
-        <p>Nele estaremos trabalhando com divisão de terras, utilizando como principal Plugin o <a href="https://spigotmc.org" target="_blank" class="highlight">Lands</a>.</p>
-        <p>Você terá ao seu dispor <span class="highlight">144 (12x12) chunks</span> para sua criação e o restante do mapa não demarcado para explorar a vontade, além de visitar as terras de outros jogadores.</p>
+        <p>Nele estaremos trabalhando com divisão de terras, utilizando o <a href="https://www.spigotmc.org/resources/lands-%E2%AD%95-land-claim-plugin-%E2%9C%85-grief-prevention-protection-gui-management-nations-wars-26-x-support.53313/" target="_blank" class="highlight">Lands</a> como principal Plugin.</p>
+        <p>Você terá ao seu dispor <span class="highlight">144 (12x12) chunks</span> para criação e o restante do mapa não demarcado para explorar a vontade, além de visitar as terras dos outros jogadores.</p>
         
         <h3>Regras:</h3>
         <ul>
-            <li>Respeito ao próximo sempre.</li>
-            <li>Proibido construções de símbolos com duplo sentido ou apologia a ideologias.</li>
-            <li>Donos de terras podem estabelecer regras locais específicas.</li>
+            <li>Respeito ao próximo sempre</li>
+            <li>Proibido construções de duplo sentido ou símbolos com apologia a ideologias</li>
+            <li>Donos de terras podem estabelecer regras locais específicas</li>
         </ul>
-        <a href="https://discord.gg" target="_blank" class="btn-discord">Entrar no Discord da Comunidade</a>
+        <a href="https://discord.gg/yxEqaaKDZ" target="_blank" class="btn-discord">Entrar no Discord da Comunidade</a>
     </div>
 
     <!-- ABA COMANDOS -->
     <div id="comandos" class="tab-content">
         <h2>Guia de Comandos</h2>
-        <p>Se você nascer em terra alheia e não puder quebrar blocos, use <span class="command">/lands wild</span> para ir ao mapa livre.</p>
+        <p>Se você nascer em terra alheia e não puder quebrar blocos, use <span class="command">/lands wild</span>, assim você será teleportado ao mapa livre, aonde não foi reivindicado. Também pode fazer uma jornada a pé, até sair do local atual.</p>
         
         <hr>
         <p><strong>Reivindicar terra (Raio de 5 chunks):</strong><br><span class="command">/claim radius 5</span></p>
         <p><strong>Renomear sua terra:</strong><br><span class="command">/lands rename [Nome]</span></p>
-        <p><strong>Configurar o Spawn da sua terra:</strong><br><span class="command">/lands setspawn</span></p>
-        <p><strong>Adicionar amigo (Trust):</strong><br><span class="command">/lands trust [Nome]</span></p>
-        <p><strong>Remover amigo (Untrust):</strong><br><span class="command">/lands untrust [Nome]</span></p>
-        <p><strong>Teleportar para uma terra:</strong><br><span class="command">/lands spawn [Nome]</span></p>
+        <p><strong>Configurar o local de Spawn da sua terra:</strong><br><span class="command">/lands setspawn</span></p>
+        <p><strong>Adicionar amigo a sua terra (Trust):</strong><br><span class="command">/lands trust [Nome]</span></p>
+        <p><strong>Remover amigo de sua terra (Untrust):</strong><br><span class="command">/lands untrust [Nome]</span></p>
+        <p><strong>Teleportar para uma terra já reivindicada:</strong><br><span class="command">/lands spawn [Nome]</span></p>
         <p><strong>Sair da propriedade de alguém:</strong><br><span class="command">/lands leave [Nome]</span></p>
         <p><strong>Deletar sua terra:</strong><br><span class="command">/lands delete [Nome]</span></p>
     </div>
@@ -184,17 +184,17 @@
     <!-- ABA CONEXÃO -->
     <div id="conexao" class="tab-content">
         <h2>Como se Conectar</h2>
-        <p>A conexão é feita via <span class="highlight">IPv6</span>. Usamos DuckDNS para manter o hostname atualizado.</p>
+        <p>A conexão é feita via <span class="highlight">IPv6</span>. Usamos o DuckDNS para manter o hostname atualizado.</p>
         
         <h3>🎮 Versão Bedrock (Mobile / Win10)</h3>
         <p>Endereço: <span class="highlight">cronicasminecraft.duckdns.org</span><br>Porta: <span class="highlight">19132</span></p>
 
         <h3>☕ Versão Java</h3>
-        <p>Muitas vezes é necessário usar o IPv6 direto entre colchetes. Resolva o hostname no <a href="https://nslookup.io" target="_blank" class="highlight">NsLookup.io</a>.</p>
-        <p>IP Atual Sugerido: <span class="command">[2804:30c:917:2e00:...]</span></p>
+        <p>Muitas vezes é necessário usar o IPv6 direto entre colchetes, pois o Minecraft Java possui dificuldade com hostnames em IPv6. Cole o hostname no <a href="https://nslookup.io" target="_blank" class="highlight">NsLookup.io</a>.</p>
+        <p>Endereço: <span class="command">[2804:30c:917:2e00:...]</span></p>
 
         <h3>🛠️ Script Automatizado (Windows)</h3>
-        <p>Crie um arquivo <code>conectar.bat</code> e cole o código abaixo para copiar o IP automaticamente:</p>
+        <p>Crie um arquivo <code>conectar.bat</code> e cole o código abaixo para copiar o IPv6 do hostname automaticamente:</p>
         <pre>
 @echo off
 set "dominio=cronicasminecraft.duckdns.org"
@@ -209,25 +209,38 @@ pause</pre>
     </div>
 
     <!-- ABA SERVIDOR -->
-    <div id="servidor" class="tab-content">
-        <h2>Status do Servidor</h2>
-        <p>Rodando em um notebook veterano com muito esforço!</p>
-        
-        <h3>Equipamento:</h3>
-        <ul>
-            <li>Notebook Asus x515JF | Linux Mint 22.3 Xfce</li>
-            <li>RAM: 8GB | SSD: 256GB</li>
-            <li>Conexão: Wifi 5G</li>
-        </ul>
-
-        <h3>Software & Plugins:</h3>
-        <p>Java Edition + Paper 26.1.2 (Experimental)</p>
-        <ul>
-            <li><strong>Geyser-Spigot & Floodgate:</strong> Suporte Bedrock.</li>
-            <li><strong>Lands:</strong> Sistema de Proteção.</li>
-            <li><strong>EssentialsX & LuckPerms:</strong> Gestão base.</li>
-        </ul>
+<div id="servidor" class="tab-content">
+    <h2>Status do Servidor</h2>
+    
+    <!-- Novo Quadro de Status em Tempo Real -->
+    <div style="background: #000; padding: 20px; border: 2px solid var(--mc-gray); margin-bottom: 20px; text-align: center;">
+        <div id="status-indicator" style="font-size: 1.5rem; margin-bottom: 10px;">
+            Carregando status...
+        </div>
+        <div id="player-count" style="color: var(--mc-gold); font-size: 1.2rem;">
+            --
+        </div>
+        <div id="version-info" style="font-size: 0.9rem; color: #888; margin-top: 5px;">
+            --
+        </div>
     </div>
+    
+    <h3>Equipamento:</h3>
+    <ul>
+        <li>Notebook Asus x515JF | Linux Mint 22.3 Xfce</li>
+        <li>RAM: 8GB | SSD: 256GB</li>
+        <li>Conexão: Wifi 5G</li>
+    </ul>
+
+    <h3>Software & Plugins:</h3>
+    <p>Java Edition + Paper 26.1.2 (Experimental)</p>
+    <ul>
+        <li><strong>Geyser-Spigot & Floodgate:</strong> Suporte Bedrock.</li>
+        <li><strong>Lands:</strong> Sistema de Proteção.</li>
+        <li><strong>EssentialsX & LuckPerms:</strong> Gestão base.</li>
+    </ul>
+</div>
+
 
 </div>
 
@@ -252,6 +265,36 @@ pause</pre>
 
     // Define a aba inicial
     document.getElementById("defaultTab").click();
+
+    async function getMCStatus() {
+    const ip = 'cronicasminecraft.duckdns.org'; // Seu hostname
+    const statusText = document.getElementById('status-indicator');
+    const playerCount = document.getElementById('player-count');
+    const versionInfo = document.getElementById('version-info');
+
+    try {
+        const response = await fetch(`https://mcstatus.io{ip}`);
+        const data = await response.json();
+
+        if (data.online) {
+            statusText.innerHTML = '<span style="color: #55ff55;">● ONLINE</span>';
+            playerCount.innerHTML = `Jogadores: ${data.players.online} / ${data.players.max}`;
+            versionInfo.innerHTML = `Versão: ${data.version.name_clean}`;
+        } else {
+            statusText.innerHTML = '<span style="color: #ff5555;">● OFFLINE</span>';
+            playerCount.innerHTML = 'Servidor desligado';
+            versionInfo.innerHTML = 'Tente novamente mais tarde';
+        }
+    } catch (error) {
+        statusText.innerHTML = '<span style="color: #ffaa00;">● ERRO NA API</span>';
+        playerCount.innerHTML = 'Não foi possível obter os dados';
+    }
+}
+
+// Chama a função ao carregar a página
+getMCStatus();
+// Atualiza a cada 1 minuto (opcional)
+setInterval(getMCStatus, 60000);
 </script>
 
 </body>
