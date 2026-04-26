@@ -178,18 +178,7 @@
         <p>Endereço: <span class="command">[2804:30c:917:2e00:...]</span></p>
 
         <h3>🛠️ Script Automatizado (Windows)</h3>
-        <p>Crie um arquivo <code>conectar.bat</code> e cole o código abaixo para copiar o IPv6 do hostname automaticamente:</p>
-        <pre>
-@echo off
-set "dominio=cronicasminecraft.duckdns.org"
-for /f "tokens=2 delims=[]" %%a in ('ping -6 -n 1 %dominio% ^| findstr "["') do (
-    echo [%%a]| clip
-    echo Endereco IPv6 copiado com colchetes: [%%a]
-    pause
-    exit /b
-)
-echo Nao foi possivel capturar o IPv6. Verifique a conexao.
-pause</pre>
+        <p>Para gerar e copiar automaticamente o endereço para o Minecraft Java, pode estar <a href="./IPv6.bat" download>baixando aqui</a> um .bat que, ao abrir, irá copiar o endereço IPv6 atualizado do DNS, então é só colar na conexão direta</p>
     </div>
     
     <!-- ABA COMANDOS -->
